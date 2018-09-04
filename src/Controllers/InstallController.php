@@ -46,7 +46,7 @@ class InstallController extends Controller
         // if all migrations are not yet installed or missing settings table,
         // then start the initial install with admin and master template choices
         if (count($this->migrations_tables) == count($this->inactiveMigrations())
-            || in_array('2015_10_08_123457_create_settings_table', $this->inactiveMigrations())
+            || in_array('2015_10_08_123457_create_ticketit_settings_table', $this->inactiveMigrations())
         ) {
             $views_files_list = $this->viewsFilesList(resource_path('views')) + ['another' => trans('ticketit::install.another-file')];
             $inactive_migrations = $this->inactiveMigrations();
